@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Article no {{ article.getId() }}{% endblock %}
+{% block body %}
+    {{ include('inc/navbar.html.twig') }}
+    {% if article %}
+        <table class="table table-stripped">
+            <thead>
+            <tr>
+                <th>Article name</th>
+                <th>Article body</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ article.getTitle() }}</td>
+                    <td>{{ article.getBody() }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p>no data</p>
+    {% endif %}
+{% endblock %}

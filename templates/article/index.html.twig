@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    {{ include('inc/navbar.html.twig') }}
+    {% if articles %}
+        <table id="articles" class="table table-stripped">
+            <thead>
+            <tr>
+                <th>Article name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.getTitle() }}</td>
+                    <td>
+                        <a class="btn btn-dark" href="/article/{{ article.getId() }}">Show</a>
+                        <a class="btn btn-dark" href="/edit_article/{{ article.getId() }}">Update</a>
+                        <a class="btn btn-danger delete-article"
+                           data-id="{{ article.getId() }}" href="#">
+                            Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>no data</p>
+    {% endif %}
+
+    {% block javascript %}
+    <script src="/js/article/delete_listener.js"></script>
+    {% endblock %}
+{% endblock %}
