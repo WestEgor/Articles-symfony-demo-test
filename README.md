@@ -8,6 +8,7 @@ The project to get a little bit familiar with symfony 5.* and doctrine 2.*
   * twig 
   * controller
   * typeform
+* doctrine
 * javascript
 * bootstrap.
 ## Getting started
