@@ -9,6 +9,7 @@ The project to get a little bit familiar with symfony 5.* and doctrine 2.*
   * controller
   * typeform
 * doctrine
+* phpcs / phpstan
 * javascript
 * bootstrap.
 ## Getting started
