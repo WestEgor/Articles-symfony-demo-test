@@ -5,26 +5,18 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ArticleRepository::class)
- */
+#[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
     private int $id;
 
-    /**
-     * @ORM\Column(type="text", length=100)
-     */
+
+    #[ORM\Column(type: "text", length: 100)]
     private string $title;
 
-    /**
-     * @ORM\Column(type="text")
-     */
+    #[ORM\Column(type: "text")]
     private string $body;
 
     /**
@@ -74,8 +66,4 @@ class Article
     {
         $this->body = $body;
     }
-
-
-
-
 }

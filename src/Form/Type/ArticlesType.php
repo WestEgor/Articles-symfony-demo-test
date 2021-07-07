@@ -18,7 +18,8 @@ class ArticlesType extends AbstractType
         $builder
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('body', TextareaType::class, array('attr' => array('class' => 'form-control')))
-            ->add('save', SubmitType::class, array('label' => 'Create', 'attr' => array('class' => 'btn btn-primary mt-3')));
+            ->add('save', SubmitType::class, array('label' => 'Create',
+                'attr' => array('class' => 'btn btn-primary mt-3')));
     }
 
     public function configureOptions(OptionsResolver $resolver): void

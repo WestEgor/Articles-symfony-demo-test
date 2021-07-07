@@ -78,11 +78,11 @@ class ArticleController extends AbstractController
     {
         $article = $articleRepository->find($id);
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($article);
+        if ($article !== null) {
+            $entityManager->remove($article);
+        }
         $entityManager->flush();
         $response = new Response();
         return $response->send();
     }
-
-
 }
